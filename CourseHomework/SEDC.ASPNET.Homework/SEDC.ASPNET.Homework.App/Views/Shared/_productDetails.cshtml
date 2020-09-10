@@ -1,0 +1,35 @@
+﻿@model List<ProductVM>
+@{
+    ViewData["Title"] = "Product Details";
+}
+
+@*<p>Name: @Model.Name</p>
+<p>Category: @Model.Category</p>
+<p>Price: @Model.Price $</p>
+<p>Description: @Model.Description</p>*@
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col">N.</th>
+            <th scope="col">Product Name</th>
+            <th scope="col">Price</th>
+            <th scope="col">Category</th>
+            <th scope="col">Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in Model)
+        {
+            <tr>
+                <td>@product.Id</td>
+                <td>@product.Name</td>
+                <td>@product.Price$$</td>
+                <td>@product.Category</td>
+                <td>
+                   @product.Description
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

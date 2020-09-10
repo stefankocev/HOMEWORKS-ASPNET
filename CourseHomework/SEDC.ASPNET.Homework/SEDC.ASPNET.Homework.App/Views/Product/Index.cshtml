@@ -1,0 +1,20 @@
+﻿@model List<ProductVM>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Products:</h1>
+
+@if (ViewBag.Message != null)
+{
+    <div class=" alert alert-info">
+        @ViewBag.Message
+    </div>
+}
+
+    <partial name="_productDetails" for="@Model" />
+   
+
+
+<br />
+<a asp-controller="Product" asp-action="CreateProduct" class="btn btn-success">Create New Product</a>

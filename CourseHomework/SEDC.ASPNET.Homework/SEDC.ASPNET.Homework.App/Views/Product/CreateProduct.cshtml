@@ -1,0 +1,40 @@
+﻿@model CreateProductVM
+
+@{
+    ViewData["Title"] = "CreateProduct";
+}
+
+<h2>CreateProduct</h2>
+@if (ViewBag.Error != null)
+{
+    <div class=" alert alert-danger">
+        @ViewBag.Error
+    </div>
+}
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="CreateProduct">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <label asp-for="Name" class="control-label"></label>
+            <input asp-for="Name" class="form-control" />
+
+
+            <label asp-for="Price" class="control-label"></label>
+            <input asp-for="Price" class="form-control" />
+
+
+            <label asp-for="Description" class="control-label"></label>
+            <input asp-for="Description" class="form-control" />
+
+            <label asp-for="Category"></label>
+            <select class="form-control" asp-for="Category" asp-items="Html.GetEnumSelectList<ProductCategory>()">
+            </select>
+            <input type="submit" value="Create Product" class="btn btn-success" />
+
+        </form>
+    </div>
+</div>
+
